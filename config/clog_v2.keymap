@@ -161,7 +161,7 @@
                layers = <0>;
         };
         combo__ {
-               timeout-ms = <60>;
+               timeout-ms = <45>;
                key-positions = <LOC_U LOC_O>;
                bindings = <&kp UNDERSCORE>;
                layers = <0>;
@@ -172,6 +172,12 @@
                bindings = <&kp Q>;
                layers = <0>;
         };
+        combo_qu {
+               timeout-ms = <75>;
+               key-positions = <LOC_U LOC_O LOC_Y>;
+               bindings = <&macro_qu>;
+               layers = <0>;
+        };
         combo_rshift {
                timeout-ms = <60>;
                key-positions = <LOC_Y LOC_K>;
@@ -179,7 +185,7 @@
                layers = <0>;
         };
         combo_num {
-               timeout-ms = <60>;
+               timeout-ms = <75>;
                key-positions = <LOC_NAV LOC_SYM>;
                bindings = <&sl NUM>;
                layers = <0>;
