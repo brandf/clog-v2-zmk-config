@@ -160,7 +160,7 @@
                layers = <0>;
         };
         combo_q {
-               timeout-ms = <60>;
+               timeout-ms = <45>;
                key-positions = <LOC_O LOC_Y>;
                bindings = <&kp Q>;
                layers = <0>;
