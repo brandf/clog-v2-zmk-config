@@ -73,8 +73,8 @@
         keymap {
                 compatible = "zmk,keymap";
                 BASE {
-                        label = "Base";
-                        bindings = <
+                            label = "Base";
+                            bindings = <
 /*                                       ╔═══════════════════╦═══════════════════╦═══════════════════╦═════════════════╗        ╔═════════════════╦═══════════════════╦═══════════════════╦═══════════════════╗                                       */
                                                &kp G                 &kp M                 &kp P             &none                      &none              &kp SQT           &kp DQT              &kp V
 /* ╔═════════════════╦═══════════════════╬═══════════════════╬═══════════════════╬═══════════════════╬═════════════════╣        ╠═════════════════╬═══════════════════╬═══════════════════╬═══════════════════╬═══════════════════╦═════════════════╗ */
@@ -85,7 +85,7 @@
                                                                     &kp C_MUTE            &sl NAV            &trans                    &trans             &sl SYM              &none
 /*                                                           ╚═══════════════════╩═══════════════════╩═════════════════╝        ╚═════════════════╩═══════════════════╩═══════════════════╝                                                           */
                              >;
-			            sensor-bindings = <&kp LEFT &kp RIGHT>;
+                             sensor-bindings = <&kp LEFT &kp RIGHT>;
                      };
                      NAV {
                              label = "Nav";
@@ -100,7 +100,7 @@
                                                                     &kp C_MUTE        &to BASE              &trans                    &trans             &sl NUM             &none
 /*                                                           ╚═══════════════════╩═══════════════════╩═════════════════╝        ╚═════════════════╩═══════════════════╩═══════════════════╝                                                           */
                              >;
-			            sensor-bindings = <&kp LEFT &kp RIGHT>;
+			                 sensor-bindings = <&kp LEFT &kp RIGHT>;
                      };
                      SYM {
                              label = "Sym";
@@ -115,7 +115,7 @@
                                                                   &kp C_MUTE           &sl NUM              &trans                    &trans            &to BASE             &none
 /*                                                           ╚═══════════════════╩═══════════════════╩═════════════════╝        ╚═════════════════╩═══════════════════╩═══════════════════╝                                                           */
                              >;
-			            sensor-bindings = <&kp LC(LEFT) &kp LC(RIGHT)>;
+			                 sensor-bindings = <&kp LC(LEFT) &kp LC(RIGHT)>;
                      };
                      NUM {
                              label = "Num";
@@ -130,9 +130,16 @@
                                                                   &kp C_MUTE           &to BASE             &trans                    &trans           &to BASE               &none
 /*                                                           ╚═══════════════════╩═══════════════════╩═════════════════╝        ╚═════════════════╩═══════════════════╩═══════════════════╝                                                           */
                              >;
-			            sensor-bindings = <&kp LEFT &kp RIGHT>;
+			                 sensor-bindings = <&kp LEFT &kp RIGHT>;
                      };
-        };
+      };
+      macros {
+        ZMK_MACRO(macro_qu,
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&kp Q &kp U>;
+        )
+     };
      combos {
         compatible = "zmk,combos";
         combo_lshift {
