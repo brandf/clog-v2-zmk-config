@@ -260,7 +260,7 @@
         };
         combo_the {
                timeout-ms = <45>;
-               key-positions = LOC_DQT LOC_V>;
+               key-positions = <LOC_DQT LOC_V>;
                bindings = <&macro_the>;
                layers = <0>;
         };
