@@ -15,6 +15,14 @@
 #define SYM 2
 #define NUM 3
 
+#define LOC_G 0
+#define LOC_M (LOC_G+1)
+#define LOC_P (LOC_G+2)
+
+#define LOC_SQT 5
+#define LOC_DQT (LOC_SQT+1)
+#define LOC_V (LOC_SQT+2)
+
 #define LOC_X 20
 #define LOC_F (LOC_X+1)
 #define LOC_L (LOC_X+2)
@@ -27,9 +35,11 @@
 
 #define LOC_NAV 31
 #define LOC_SYM (LOC_NAV+3)
-/*
-                                                                             Base
 
+
+/*
+                                                    [------for------]       Base         [------ion------]
+                                                       [ing] [and]                          [tha] [the]
                                                    ╭─────┬─────┬─────╮                  ╭─────┬─────┬─────╮
                                                    │  G  │  M  │  P  │                  │  '  │  "  │  V  │
                                              ╭─────┽─────┼─────┼─────┼─────╮      ╭─────┼─────┼─────┼─────┼─────╮
@@ -149,6 +159,36 @@
             tap-ms = <40>;
             bindings = <&kp Q &kp U>;
         )
+        ZMK_MACRO(macro_for,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&kp F &kp O &kp R>;
+        )
+        ZMK_MACRO(macro_ion,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&kp I &kp O &kp N>;
+        )
+        ZMK_MACRO(macro_ing,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&kp I &kp N &kp G>;
+        )
+        ZMK_MACRO(macro_and,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&kp A &kp N &kp D>;
+        )
+        ZMK_MACRO(macro_tha,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&kp T &kp H &kp A>;
+        )
+        ZMK_MACRO(macro_the,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&kp T &kp H &kp E>;
+        )
       };
       combos {
         compatible = "zmk,combos";
@@ -188,14 +228,50 @@
                bindings = <&macro_qu>;
                layers = <0>;
         };
+        combo_for {
+               timeout-ms = <75>;
+               key-positions = <LOC_G LOC_M LOC_P>;
+               bindings = <&macro_for>;
+               layers = <0>;
+        };
+        combo_ion {
+               timeout-ms = <75>;
+               key-positions = <LOC_SQT LOC_DQT LOC_V>;
+               bindings = <&macro_ion>;
+               layers = <0>;
+        };
+        combo_ing {
+               timeout-ms = <45>;
+               key-positions = <LOC_G LOC_M>;
+               bindings = <&macro_ing>;
+               layers = <0>;
+        };
+        combo_and {
+               timeout-ms = <45>;
+               key-positions = <LOC_M LOC_P>;
+               bindings = <&macro_and>;
+               layers = <0>;
+        };
+        combo_tha {
+               timeout-ms = <45>;
+               key-positions = <LOC_SQT LOC_DQT>;
+               bindings = <&macro_tha>;
+               layers = <0>;
+        };
+        combo_the {
+               timeout-ms = <45>;
+               key-positions = LOC_DQT LOC_V>;
+               bindings = <&macro_the>;
+               layers = <0>;
+        };
         combo_rshift {
-               timeout-ms = <60>;
+               timeout-ms = <45>;
                key-positions = <LOC_Y LOC_K>;
                bindings = <&kp LSHFT>;
                layers = <0>;
         };
         combo_num {
-               timeout-ms = <75>;
+               timeout-ms = <45>;
                key-positions = <LOC_NAV LOC_SYM>;
                bindings = <&sl NUM>;
                layers = <0>;
